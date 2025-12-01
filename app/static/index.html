@@ -403,6 +403,328 @@
             border-top: 2px solid #e0e0e0;
         }
         
+        #annotations {
+            display: none;
+        }
+        
+        #annotations.active {
+            display: block;
+        }
+        
+        .annotation-header {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .annotation-header h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .annotation-step {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .annotation-step h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .actions-list {
+            margin-top: 15px;
+        }
+        
+        .actions-list h4 {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .action-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .action-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .action-details {
+            flex: 1;
+        }
+        
+        .action-type-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .action-details p {
+            margin: 5px 0;
+            color: #333;
+        }
+        
+        .action-details code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+        
+        .action-notes {
+            color: #666;
+            font-style: italic;
+            margin-top: 8px;
+        }
+        
+        .export-annotations {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+        
+        .export-annotations button {
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .export-annotations button:hover {
+            background: #764ba2;
+        }
+        
+        /* Annotation specific styles */
+        .annotation-header {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid #0284c7;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .annotation-meta {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .annotation-meta span {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .annotation-guidelines {
+            margin-top: 15px;
+            padding: 15px;
+            background: #fff9e6;
+            border-radius: 6px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .annotation-step {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .step-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f3f4f6;
+        }
+        
+        .step-header h3 {
+            color: #1f2937;
+            margin: 0;
+        }
+        
+        .step-duration {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .step-search {
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .step-search code {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #667eea;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .test-search-btn {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .test-search-btn:hover {
+            background: #764ba2;
+        }
+        
+        .actions-list {
+            margin-top: 20px;
+        }
+        
+        .actions-list h4 {
+            color: #374151;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .action-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            margin: 10px 0;
+            background: #f9fafb;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+            transition: all 0.3s;
+        }
+        
+        .action-item:hover {
+            background: #f3f4f6;
+            transform: translateX(5px);
+        }
+        
+        .action-number {
+            background: #667eea;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .action-details {
+            flex: 1;
+        }
+        
+        .action-type-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        .badge-click {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .badge-right_click {
+            background: #fce7f3;
+            color: #be185d;
+        }
+        
+        .badge-input {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .badge-drag {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .badge-key_press {
+            background: #f3e8ff;
+            color: #6b21a8;
+        }
+        
+        .badge-scroll {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+        
+        .badge-hover {
+            background: #fecaca;
+            color: #991b1b;
+        }
+        
+        .action-description {
+            color: #374151;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .export-annotations {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e5e7eb;
+        }
+        
         .simple-explanation {
             background: linear-gradient(135deg, #fff9e6 0%, #ffedd5 100%);
             border-left: 4px solid #f59e0b;
@@ -457,6 +779,9 @@
                     <button class="btn-primary" id="generateBtn" onclick="generateWorkflow()">
                         Generate Workflow
                     </button>
+                    <button class="btn-primary" id="generateAnnotationsBtn" onclick="generateAnnotations()">
+                        Generate Annotations
+                    </button>
                     <button class="btn-secondary" id="clearBtn" onclick="clearWorkflow()">
                         Clear
                     </button>
@@ -473,6 +798,7 @@
             </div>
             
             <div class="workflow" id="workflow"></div>
+            <div class="workflow" id="annotations"></div>
         </div>
     </div>
     <script>
@@ -629,7 +955,163 @@
             document.getElementById('validateSearches').checked = false;
             document.getElementById('workflow').classList.remove('active');
             document.getElementById('workflow').innerHTML = '';
+            document.getElementById('annotations').classList.remove('active');
+            document.getElementById('annotations').innerHTML = '';
             document.getElementById('error').classList.remove('active');
+        }
+        
+        async function generateAnnotations() {
+            const taskInput = document.getElementById('taskInput').value.trim();
+            const loading = document.getElementById('loading');
+            const annotationDiv = document.getElementById('annotations');
+            const errorDiv = document.getElementById('error');
+            const generateBtn = document.getElementById('generateAnnotationsBtn');
+            
+            if (!taskInput) {
+                alert('Please enter a task description');
+                return;
+            }
+            
+            loading.classList.add('active');
+            annotationDiv.classList.remove('active');
+            annotationDiv.innerHTML = '';
+            errorDiv.classList.remove('active');
+            generateBtn.disabled = true;
+            
+            try {
+                const response = await fetch('/api/generate-annotations', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ task: taskInput })
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.detail || 'Failed to generate annotations');
+                }
+                
+                const annotations = await response.json();
+                
+                // Store for export
+                window.lastAnnotationData = annotations;
+                
+                displayAnnotations(annotations);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('errorMessage').textContent = error.message;
+                errorDiv.classList.add('active');
+            } finally {
+                loading.classList.remove('active');
+                generateBtn.disabled = false;
+            }
+        }
+        
+        function displayAnnotations(annotations) {
+            const annotationDiv = document.getElementById('annotations');
+            
+            let html = `
+                <div class="annotation-header">
+                    <h2>📋 Annotation Sequence</h2>
+                    <p><strong>Task:</strong> ${annotations.task}</p>
+                    <div class="annotation-meta">
+                        <span><strong>📊 Total Steps:</strong> ${annotations.total_steps}</span>
+                        <span><strong>⚡ Total Actions:</strong> ${annotations.total_estimated_actions}</span>
+                        ${annotations.estimated_time ? `<span><strong>⏱️ Estimated Time:</strong> ${annotations.estimated_time}</span>` : ''}
+                    </div>
+                    <div class="annotation-guidelines">
+                        <strong>📝 Guidelines:</strong> ${annotations.annotation_guidelines}
+                    </div>
+                </div>
+            `;
+            
+            annotations.annotation_sequences.forEach(seq => {
+                html += `
+                    <div class="annotation-step">
+                        <div class="step-header">
+                            <h3>Step ${seq.step_number}: ${seq.step_description}</h3>
+                            <span class="step-duration">⏱️ ~${seq.estimated_duration_seconds}s</span>
+                        </div>
+                        <div class="step-search">
+                            <strong>🔍 Search Query:</strong> 
+                            <code>${seq.search_query}</code>
+                            <a href="https://www.google.com/search?q=${encodeURIComponent(seq.search_query)}" 
+                               target="_blank" class="test-search-btn">Test Search</a>
+                        </div>
+                        
+                        <div class="actions-list">
+                            <h4>Expected Actions (${seq.expected_actions.length}):</h4>
+                            ${seq.expected_actions.map((action, idx) => `
+                                <div class="action-item">
+                                    <div class="action-number">${idx + 1}</div>
+                                    <div class="action-details">
+                                        <span class="action-type-badge badge-${action.action_type}">${action.action_type}</span>
+                                        <p class="action-description">${action.description}</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += `
+                <div class="export-annotations">
+                    <button class="btn-secondary" onclick="exportAnnotationsJSON()">💾 Export JSON</button>
+                    <button class="btn-secondary" onclick="exportAnnotationsCSV()">📊 Export CSV</button>
+                </div>
+            `;
+            
+            annotationDiv.innerHTML = html;
+            annotationDiv.classList.add('active');
+        }
+        
+        function exportAnnotationsJSON() {
+            const annotationDiv = document.getElementById('annotations');
+            if (!annotationDiv.classList.contains('active')) {
+                alert('No annotations to export');
+                return;
+            }
+            
+            const data = window.lastAnnotationData;
+            
+            if (!data) {
+                alert('Annotation data not available');
+                return;
+            }
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `annotations_${Date.now()}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        function exportAnnotationsCSV() {
+            const data = window.lastAnnotationData;
+            
+            if (!data) {
+                alert('Annotation data not available');
+                return;
+            }
+            
+            let csv = 'Step,Action #,Action Type,Description\n';
+            
+            data.annotation_sequences.forEach(seq => {
+                seq.expected_actions.forEach((action, idx) => {
+                    csv += `"Step ${seq.step_number}","${idx + 1}","${action.action_type}","${action.description.replace(/"/g, '""')}"\n`;
+                });
+            });
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `annotations_${Date.now()}.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
         }
     </script>
 </body>

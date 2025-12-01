@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 import os
 from pathlib import Path
-from .models import TaskRequest, WorkflowResponse, Step, SearchValidation, SearchResult
+from .models import TaskRequest, WorkflowResponse, Step, SearchValidation, SearchResult, WorkflowAnnotationSequence, StepAnnotationSequence, AnnotationAction
 from .services.claude_service import ClaudeService
 from .services.search_service import SearchService
 
@@ -138,6 +138,63 @@ async def quick_workflow(request: TaskRequest):
             **workflow_data,
             "total_steps": len(workflow_data["steps"])
         }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/api/generate-annotations", response_model=WorkflowAnnotationSequence)
+async def generate_annotations(request: TaskRequest):
+    """
+    Generate annotation sequence for the given task.
+    Returns predicted user actions for each step.
+    """
+    try:
+        # First generate the workflow
+        workflow_data = await claude_service.generate_workflow(request.task)
+        
+        # Then generate annotation sequences
+        annotation_data = await claude_service.generate_annotation_sequence(workflow_data)
+        
+        # Convert to response model
+        annotation_sequences = []
+        for seq in annotation_data["annotation_sequences"]:
+            actions = [
+                AnnotationAction(**action) 
+                for action in seq["expected_actions"]
+            ]
+            annotation_sequences.append(
+                StepAnnotationSequence(
+                    step_number=seq["step_number"],
+                    step_description=seq["step_description"],
+                    search_query=seq["search_query"],
+                    expected_actions=actions,
+                    estimated_duration_seconds=seq["estimated_duration_seconds"]
+                )
+            )
+        
+        response = WorkflowAnnotationSequence(
+            task=annotation_data["task"],
+            task_summary=annotation_data["task_summary"],
+            total_steps=annotation_data["total_steps"],
+            annotation_sequences=annotation_sequences,
+            total_estimated_actions=annotation_data["total_estimated_actions"],
+            annotation_guidelines=annotation_data["annotation_guidelines"]
+        )
+        
+        return response
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error generating annotations: {str(e)}")
+
+@app.post("/api/quick-annotations")
+async def quick_annotations(request: TaskRequest):
+    """
+    Quick annotation generation without validation.
+    Returns raw JSON without Pydantic validation for faster response.
+    """
+    try:
+        workflow_data = await claude_service.generate_workflow(request.task)
+        annotation_data = await claude_service.generate_annotation_sequence(workflow_data)
+        return annotation_data
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

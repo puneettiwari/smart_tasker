@@ -37,9 +37,9 @@ docker-compose up --build
 
 4. **Access the app:**
 
-- Web UI: http://localhost:8000
-- API Docs: http://localhost:8000/docs
-- Health Check: http://localhost:8000/health
+- Web UI: http://localhost:8001
+- API Docs: http://localhost:8001/docs
+- Health Check: http://localhost:8001/health
 
 ### Without Docker
 
@@ -91,7 +91,7 @@ Health check endpoint.
 ```bash
 # Amazon Linux 2 or Ubuntu 22.04
 # Instance type: t2.micro or t2.small
-# Security Group: Allow ports 22 (SSH) and 8000 (HTTP)
+# Security Group: Allow ports 22 (SSH) and 8001 (HTTP)
 ```
 
 ### 2. Connect and Setup
@@ -136,7 +136,7 @@ docker-compose logs -f
 ### 4. Access Your App
 
 ```
-http://your-ec2-public-ip:8000
+http://your-ec2-public-ip:8001
 ```
 
 ### 5. Setup with Nginx (Optional - for production)
@@ -157,7 +157,7 @@ server {
     server_name your-domain.com;
 
     location / {
-        proxy_pass http://localhost:8000;
+        proxy_pass http://localhost:8001;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
     }
@@ -184,7 +184,7 @@ sudo certbot --nginx -d your-domain.com
 | `ANTHROPIC_API_KEY` | Yes | Your Claude API key |
 | `GOOGLE_API_KEY` | No | Google Custom Search API key |
 | `GOOGLE_SEARCH_ENGINE_ID` | No | Google Custom Search Engine ID |
-| `PORT` | No | API port (default: 8000) |
+| `PORT` | No | API port (default: 8001) |
 
 ## Usage Examples
 

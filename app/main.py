@@ -111,6 +111,7 @@ async def generate_workflow(request: TaskRequest):
         response = WorkflowResponse(
             task=request.task,
             task_summary=workflow_data["task_summary"],
+            simple_explanation=workflow_data.get("simple_explanation", "Complete the task by following the steps below."),
             steps=validated_steps,
             total_steps=len(validated_steps),
             estimated_time=workflow_data["estimated_time"],

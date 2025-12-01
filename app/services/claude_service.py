@@ -65,6 +65,8 @@ Respond ONLY with a valid JSON object (no markdown, no backticks):
 
   "task_summary": "brief description focusing on the technical challenge",
 
+  "simple_explanation": "A clear, simple explanation of what the user will accomplish and why each part matters. Write in friendly, actionable language. Example: 'You'll be modifying an Excel chart to make it more visually appealing. First, you'll round the bar edges to give them a modern look. Then you'll add labels so viewers can see the exact values. Finally, you'll add a VS text with a gradient to create a professional comparison visual.'",
+
   "steps": [
 
     {{
@@ -103,7 +105,9 @@ CRITICAL:
 
 - Provide searches that return technical tutorials, not basic navigation
 
-- Keep total steps between 3-8 for most tasks"""
+- Keep total steps between 3-8 for most tasks
+
+- The simple_explanation should be 2-4 sentences that help the user understand the big picture"""
 
         response_text = None
         try:

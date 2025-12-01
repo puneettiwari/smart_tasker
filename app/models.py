@@ -28,6 +28,7 @@ class Step(BaseModel):
 class WorkflowResponse(BaseModel):
     task: str
     task_summary: str
+    simple_explanation: str  # NEW FIELD
     steps: List[Step]
     total_steps: int
     estimated_time: str
